@@ -1,10 +1,4 @@
 G.A.Q
 TESTANDO GIT
 
-teste
-
-mjustino incrementmjustino incrementmjustino incrementmjustino incrementmjustino incrementmjustino 
-incrementmjustino incrementmjustino incrementmjustino incrementmjustino incrementmjustino incrementmjustino 
-incrementmjustino incrementmjustino incrementmjustino incrementmjustino incrementmjustino incrementmjustino 
-incrementmjustino incrementmjustino incrementmjustino incrementmjustino incrementmjustino incrementmjustino 
-incrementmjustino incrementmjustino incrementmjustino incrementmjustino incrementmjustino incrementmjustino increment
+mjustino testando
