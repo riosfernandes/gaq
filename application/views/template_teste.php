@@ -3,26 +3,34 @@
     <head>
         <?php
         echo '<title>' . $titulo . '</title>';
-        foreach ($styles as $style) {
-            echo link_tag(CSSPATH . $style . '.css');
-        }
-        if (isset($css_files)) {
-            foreach ($css_files as $css) {
-                echo link_tag($css);
-            }
-        }
-        if (isset($css_files_aditional)) {
-            foreach ($css_files_aditional as $css) {
-                echo link_tag(CSSPATH . $css . '.css');
-            }
-        }
 
+        // <editor-fold defaultstate="collapsed" desc="<<:: CSS ::>>">
+        if (!isset($css_files))
+            $css_files = array();
+
+
+        if (isset($styles))
+            $css_files = array_merge($css_files, array_diff($styles, $css_files));
+
+
+        if (isset($css_files_aditional))
+            $css_files = array_merge($css_files, array_diff($css_files_aditional, $css_files));
+
+        if (isset($css_files)) {
+            foreach ($css_files as $cs_crud) {
+                echo link_tag($cs_crud);
+            }
+        }// </editor-fold>
+                
+        // <editor-fold defaultstate="collapsed" desc="<<:: JS ::>>">
         if (!isset($js_files))
             $js_files = array();
-        
+
+
         if (isset($js_files_jquery))
             $js_files = array_merge($js_files, array_diff($js_files_jquery, $js_files));
-        
+
+
         if (isset($js_files_aditional))
             $js_files = array_merge($js_files, array_diff($js_files_aditional, $js_files));
 
@@ -30,7 +38,7 @@
             foreach ($js_files as $js_crud) {
                 echo script_tag($js_crud);
             }
-        }
+        }// </editor-fold>
         ?>
     </head>
     <body>
@@ -39,11 +47,11 @@
             <div id="header"><?php include_once('header.php') ?></div>
             <div id="navigator"><?php include_once('navigator.php') ?></div>
             <div id="contents">
-                <?php
-                if (isset($subtitle))
-                    echo '<h1>' . $subtitle . '</h1>';
-                echo($contents)
-                ?>
+<?php
+if (isset($subtitle))
+    echo '<h1>' . $subtitle . '</h1>';
+echo($contents)
+?>
             </div>
             <div id="footer"><?php include_once('footer.php') ?></div>
         </div>        

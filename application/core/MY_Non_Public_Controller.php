@@ -5,8 +5,7 @@ class MY_Non_Public_Controller extends CI_Controller {
     function __construct() {
         parent::__construct();
         //definir stylesheets para as páginas
-        
-        $this->template->set('styles', array('hyper_header', 'header', 'general', 'navigator', 'content', 'footer'));
+        $this->template->set('styles', $this->get_css());
         $this->template->set('js_files_jquery', $this->get_js());
         $this->template->set('js_files_aditional', array());
 
@@ -14,15 +13,36 @@ class MY_Non_Public_Controller extends CI_Controller {
     }
 
     public function get_js() {
-        $js_temp = array('navigator', 'footer');
+        $js_temp = array('jquery-1.7.1.min', 'navigator', 'footer');
         $js_files_jquery = array();
-        
+
         foreach ($js_temp as $js) {
-            $js = JSPATH . $js . '.js';
-            $js_files_jquery[sha1($js)] = base_url() . $js;
+            
+            $js_files_jquery[sha1($js)] = $this->get_js_formatado($js);
         }
-        
+
         return $js_files_jquery;
+    }
+
+    public function get_js_formatado($js) {
+        $js = JSPATH . $js . '.js';
+        return base_url() . $js;
+    }
+    
+    public function get_css() {
+        $css_temp = array('hyper_header', 'header', 'general', 'navigator', 'content', 'footer');
+        $css_files = array();
+
+        foreach ($css_temp as $css) {
+            $css_files[sha1($css)] = $this->get_css_formatado($css);
+        }
+
+        return $css_files;
+    }
+    
+    public function get_css_formatado($css) {
+        $css = CSSPATH . $css . '.css';
+        return base_url() . $css;
     }
 
     function isLogado() {
