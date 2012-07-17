@@ -16,8 +16,8 @@ class Aluguel_simples extends MY_Non_Public_Controller {
     private function load_view() {
         $this->template->set('titulo', 'Aluguel Simples');
         $this->template->set('subtitle', 'Aluguel Simples');
-        $this->template->set('css_files_aditional', array('reserva-simples'));
-        $this->template->set('js_files_aditional', array('aluguel-simples'));
+        $this->template->set('css_files_aditional', array($this->get_css_formatados_formatado('reserva-simples')));
+        $this->template->set('js_files_aditional', array($this->get_js_formatados_formatado('aluguel-simples')));
         $this->template->load('template_teste', 'aluguel_simples');
     }
 
