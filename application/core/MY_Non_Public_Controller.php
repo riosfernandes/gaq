@@ -6,7 +6,7 @@ class MY_Non_Public_Controller extends CI_Controller {
         parent::__construct();
         //definir stylesheets para as páginas
         $this->template->set('styles', array('hyper_header', 'header', 'general', 'navigator', 'content', 'footer'));
-        $this->template->set('js_files_jquery', array('jquery-1.7.1.min', 'jquery.tools.min', 'navigator', 'footer'));
+        $this->template->set('js_files_jquery', array('jquery-1.7.1.min', 'navigator', 'footer'));
         $this->template->set('js_files_aditional', array());
 
         $this->isLogado();

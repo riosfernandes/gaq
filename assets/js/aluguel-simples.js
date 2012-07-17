@@ -132,10 +132,13 @@ $(function(){
         if(!tipoHorario)
             return;
         
+        var data = $('#data_reserva').val();
+        
         $('#quadras').html('');        
         var horarios = $('#horarios');
         horarios.html('<option>Carregando...</option>').load('aluguel_simples/get_horarios/', {
-            tipo_quadra:tipoHorario
+            tipo_quadra:tipoHorario,
+            data_reserva:data
         });
     }
     

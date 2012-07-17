@@ -3,30 +3,30 @@
     <head>
         <?php
         echo '<title>' . $titulo . '</title>';
-        foreach ($styles as $style) {
-            echo link_tag(CSSPATH . $style . '.css');
-        }
         if (isset($css_files)) {
             foreach ($css_files as $css) {
                 echo link_tag($css);
             }
         }
+        foreach ($styles as $style) {
+            echo link_tag(CSSPATH . $style . '.css');
+        }
         if (isset($css_files_aditional)) {
             foreach ($css_files_aditional as $css) {
                 echo link_tag(CSSPATH . $css . '.css');
             }
-        }
-        if (isset($js_files)) {
-            foreach ($js_files as $js_crud) {
-                echo script_tag(JSPATH . $js_crud . '.js');
-            }
-        }
+        }        
         foreach ($js_files_jquery as $js_jquery) {
             echo script_tag(JSPATH . $js_jquery . '.js');
         }
         if (isset($js_files_aditional)) {
             foreach ($js_files_aditional as $file) {
                 echo script_tag(JSPATH . $file . '.js');
+            }
+        }
+        if (isset($js_files)) {
+            foreach ($js_files as $js_crud) {
+                echo script_tag($js_crud);
             }
         }
         ?>

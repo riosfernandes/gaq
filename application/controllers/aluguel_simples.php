@@ -22,10 +22,9 @@ class Aluguel_simples extends MY_Non_Public_Controller {
     }
 
     public function get_horarios() {
-        //@todo: fazer tratativa de exceptions
-        $tipo_quadra = $this->input->post('tipo_quadra'); //3
-        //@todo: pegar o parâmetro do post
-        $data = date('2012/12/01');
+        $tipo_quadra = $this->input->post('tipo_quadra');
+        $data = $this->date_converter($this->input->post('data_reserva'));
+
         //recupera todas as quadras validas do tipo selecionado
         $quadras = new Quadra_model();
 
@@ -97,7 +96,7 @@ class Aluguel_simples extends MY_Non_Public_Controller {
 
         $arraytemp = array();
 
-        if ($aluguel_simples->get()->result_count() != 0)
+        if ($aluguel_simples->get() != 0)
             $arraytemp = $aluguel_simples->to_array('hora_reserva');
 
         return $arraytemp;

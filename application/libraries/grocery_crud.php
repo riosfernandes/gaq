@@ -1359,7 +1359,7 @@ class grocery_CRUD_Layout extends grocery_CRUD_Model_Driver
 	
 	protected function showAddForm()
 	{
-		$this->set_js('assets/grocery_crud/js/jquery-1.7.1.min.js');
+//		$this->set_js('assets/grocery_crud/js/jquery-1.7.1.min.js');
 		
 		$data 				= $this->get_common_data();
 		$data->types 		= $this->get_field_types();
@@ -1378,7 +1378,7 @@ class grocery_CRUD_Layout extends grocery_CRUD_Model_Driver
 	
 	protected function showEditForm($state_info)
 	{
-		$this->set_js('assets/grocery_crud/js/jquery-1.7.1.min.js');
+//		$this->set_js('assets/grocery_crud/js/jquery-1.7.1.min.js');
 		
 		$data 				= $this->get_common_data();
 		$data->types 		= $this->get_field_types();
@@ -1508,8 +1508,8 @@ class grocery_CRUD_Layout extends grocery_CRUD_Model_Driver
 		$js_files = $this->get_js_files();
 		$css_files =  $this->get_css_files();
 
-		if($this->unset_jquery)
-			unset($js_files[sha1('assets/grocery_crud/js/jquery-1.7.1.min.js')]);
+//		if($this->unset_jquery)
+//			unset($js_files[sha1('assets/grocery_crud/js/jquery-1.7.1.min.js')]);
 		
 		if($this->echo_and_die === false)
 		{
