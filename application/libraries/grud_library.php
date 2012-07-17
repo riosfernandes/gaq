@@ -1,5 +1,7 @@
 <?php
 
+//OBSOLETO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 //@todo: transformar em abstract e incluir um validation para inserir, alterar e deletar
 class Grud_library extends CI_Controller {
 

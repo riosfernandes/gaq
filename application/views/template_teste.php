@@ -16,17 +16,19 @@
                 echo link_tag(CSSPATH . $css . '.css');
             }
         }
+
+        if (!isset($js_files))
+            $js_files = array();
+        
+        if (isset($js_files_jquery))
+            $js_files = array_merge($js_files, array_diff($js_files_jquery, $js_files));
+        
+        if (isset($js_files_aditional))
+            $js_files = array_merge($js_files, array_diff($js_files_aditional, $js_files));
+
         if (isset($js_files)) {
             foreach ($js_files as $js_crud) {
-                echo script_tag(JSPATH . $js_crud . '.js');
-            }
-        }
-        foreach ($js_files_jquery as $js_jquery) {
-            echo script_tag(JSPATH . $js_jquery . '.js');
-        }
-        if (isset($js_files_aditional)) {
-            foreach ($js_files_aditional as $file) {
-                echo script_tag(JSPATH . $file . '.js');
+                echo script_tag($js_crud);
             }
         }
         ?>
