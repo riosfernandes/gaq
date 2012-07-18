@@ -139,44 +139,44 @@ input.remove{
     text-align: left;    
 }
 
-input[type=text],
-input[type=password],
-textarea,
-select{
+.block input[type=text],
+.block input[type=password],
+.block textarea,
+.block select{
     border: 1px double #CCC;
     padding: 3px 6px;
     outline: none;
-    /*    -webkit-border-radius: 4px;
+        -webkit-border-radius: 4px;
         -moz-border-radius: 4px;
-        border-radius: 4px;*/
-    -moz-box-shadow: -1px 1px 0px #fff; /* FF3.5+ */;
-    -webkit-box-shadow: -1px 1px 0px #fff; /* Saf3.0+, Chrome */;
-    box-shadow: -1px 1px 0px #fff; /* Opera 10.5, IE 9.0 */;
+        border-radius: 4px;
+    -moz-box-shadow: -1px 1px 0px #fff;  FF3.5+ ;
+    -webkit-box-shadow: -1px 1px 0px #fff;  Saf3.0+, Chrome ;
+    box-shadow: -1px 1px 0px #fff;  Opera 10.5, IE 9.0 ;
     color: #555;
     background-color: #ededed;
-    moz-transition: all 0.3s ease-out; /* FF3.7+ */;
-    -o-transition: all 0.3s ease-out; /* Opera 10.5 */;
-    -webkit-transition: all 0.3s ease-out; /* Saf3.2+, Chrome */;
+    moz-transition: all 0.3s ease-out;  FF3.7+ ;
+    -o-transition: all 0.3s ease-out;  Opera 10.5 ;
+    -webkit-transition: all 0.3s ease-out;  Saf3.2+, Chrome ;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     color: #444;
 }
 
-input[type=text],
-input[type=password],
-textarea,
-select{
+.block input[type=text],
+.block input[type=password],
+.block textarea,
+.block select{
     width: 70%;
 }
 
-input[type=password] {
+.block input[type=password] {
     padding: 4px;
     width: 200px;
     border: 1px solid #CCC;
 }
 
-input:focus, 
-textarea:focus,
-select:focus {
+.block input:focus, 
+.block textarea:focus,
+.block select:focus {
     background-color: #fff;
 }
 

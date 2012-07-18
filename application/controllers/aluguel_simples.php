@@ -16,8 +16,8 @@ class Aluguel_simples extends MY_Non_Public_Controller {
     private function load_view() {
         $this->template->set('titulo', 'Aluguel Simples');
         $this->template->set('subtitle', 'Aluguel Simples');
-        $this->template->set('css_files_aditional', array($this->get_css_formatados_formatado('reserva-simples')));
-        $this->template->set('js_files_aditional', array($this->get_js_formatados_formatado('aluguel-simples')));
+        $this->template->set('css_files_aditional', array($this->get_css_formatado('reserva-simples')));
+        $this->template->set('js_files_aditional', array($this->get_js_formatado('aluguel-simples')));
         $this->template->load('template_teste', 'aluguel_simples');
     }
 
@@ -93,12 +93,17 @@ class Aluguel_simples extends MY_Non_Public_Controller {
         $aluguel_simples = new Aluguel_simples_model();
         $aluguel_simples->where('quadra_id', $quadra->id);
         $aluguel_simples->where('data_reserva', $data);
-
+        
         $arraytemp = array();
-
-        if ($aluguel_simples->get() != 0)
-            $arraytemp = $aluguel_simples->to_array('hora_reserva');
-
+        
+        foreach ($aluguel_simples->get() as $h) {
+            $temp = $h->hora_reserva;
+            if(isset($temp)){
+                $temp = substr($temp, 0, 5);
+                array_push($arraytemp, $temp);
+            }            
+        }
+        
         return $arraytemp;
     }
 

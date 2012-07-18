@@ -13,7 +13,6 @@ $(function(){
     });		
 		
     $('#crudForm').submit(function(){                    
-        alert('submit frexigrid-add');
         $(this).ajaxSubmit({
             url: validation_url,
             dataType: 'json',

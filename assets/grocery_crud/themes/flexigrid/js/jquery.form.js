@@ -44,8 +44,6 @@
  * an HTML form using AJAX.
  */
 $.fn.ajaxSubmit = function(options) {
-    alert('submit jquery.forms');
-        
 	// fast fail if nothing selected (http://dev.jquery.com/ticket/2752)
 	if (!this.length) {
 		log('ajaxSubmit: skipping submit process - no element selected');

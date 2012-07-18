@@ -13,11 +13,10 @@ class MY_Non_Public_Controller extends CI_Controller {
     }
 
     public function get_js() {
-        $js_temp = array('jquery-1.7.1.min', 'navigator', 'footer');
+        $js_temp = array('navigator', 'footer');
         $js_files_jquery = array();
 
-        foreach ($js_temp as $js) {
-            
+        foreach ($js_temp as $js) {            
             $js_files_jquery[sha1($js)] = $this->get_js_formatado($js);
         }
 

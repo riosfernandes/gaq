@@ -23,9 +23,12 @@
         }// </editor-fold>
                 
         // <editor-fold defaultstate="collapsed" desc="<<:: JS ::>>">
-        if (!isset($js_files))
+        if (!isset($js_files)){
             $js_files = array();
-
+            
+            $js = JSPATH . 'jquery-1.7.1.min.js';
+            $js_files[sha1($js)] = $js;
+        }
 
         if (isset($js_files_jquery))
             $js_files = array_merge($js_files, array_diff($js_files_jquery, $js_files));
@@ -39,11 +42,6 @@
                 echo script_tag($js_crud);
             }
         }// </editor-fold>
-        if (isset($js_files)) {
-            foreach ($js_files as $js_crud) {
-                echo script_tag($js_crud);
-            }
-        }
         ?>
     </head>
     <body>
